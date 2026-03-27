@@ -121,6 +121,9 @@ new_scaled = scaler.transform(new_df)
 prediction = log_model.predict(new_scaled)
 probability = log_model.predict_proba(new_scaled)
 
+import joblib
+joblib.dump(log_model, "trained_model.pkl")
+
 print("\nManual Input Prediction:")
 print("Predicted Class:", prediction[0])
 print("Probability:", probability[0])
